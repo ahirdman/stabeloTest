@@ -1,19 +1,19 @@
-import { IElevator } from './elevator.interface';
-import * as Utils from './../utils';
+import * as Utils from "./../utils";
+import { IElevator } from "./elevator.interface";
 
 const elevators: IElevator[] = [1, 2, 3, 4, 5].map(id => {
   return {
     id,
     floor: Utils.randomFloor(),
     isMoving: false,
-    movingTo: null,
+    movingTo: undefined,
 
     callElevator(floor: number) {
       this.movingTo = floor;
       this.isMoving = true;
 
       setTimeout(() => {
-        this.movingTo = null;
+        this.movingTo = undefined;
         this.isMoving = false;
         this.floor = floor;
       }, Math.abs(this.floor - floor) * 2000);

@@ -1,5 +1,6 @@
-import { IElevator } from '../elevators/elevator.interface';
-import HttpException from './http-exception';
+import { IElevator } from "../elevators/elevator.interface";
+
+import HttpException from "./http-exception";
 
 const closestFloorWithElevator = (
   floor: number,
@@ -26,9 +27,9 @@ export const closestElevator = (
 
 export const validateFloor = (floor: number, elevators: IElevator[]): void => {
   if (elevators.find((elevator: IElevator) => elevator.movingTo === floor)) {
-    throw new HttpException(400, 'Elevator already on the way.');
+    throw new HttpException(400, "Elevator already on the way.");
   }
   if (elevators.find((elevator: IElevator) => elevator.floor === floor)) {
-    throw new HttpException(400, 'Elevator already on floor.');
+    throw new HttpException(400, "Elevator already on floor.");
   }
 };

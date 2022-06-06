@@ -46,12 +46,12 @@ const Elevator = ({ floor }: IElevatorProps) => {
             top: steelTop,
             height: steelHeight,
           }}
-          layout
+          layout={true}
           transition={elevatorTransition}
         />
         <Styled.Elevator
           style={{ bottom: floor * 35 - 35 }}
-          layout
+          layout={true}
           transition={elevatorTransition}
         />
       </Styled.ElevatorShaft>

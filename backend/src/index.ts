@@ -1,8 +1,9 @@
-import express, { Application } from 'express';
-import cors from 'cors';
-import { elevatorRouter } from './elevators/elevators.router';
-import { notFoundHandler } from './middleware/404.middleware';
-import { errorHandler } from './middleware/error.middleware';
+import cors from "cors";
+import express, { Application } from "express";
+
+import { elevatorRouter } from "./elevators/elevators.router";
+import { notFoundHandler } from "./middleware/404.middleware";
+import { errorHandler } from "./middleware/error.middleware";
 
 const PORT = 3000;
 
@@ -12,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/api/elevators', elevatorRouter);
+app.use("/api/elevators", elevatorRouter);
 
 app.use(errorHandler);
 app.use(notFoundHandler);

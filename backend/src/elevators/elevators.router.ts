@@ -1,9 +1,10 @@
-import express, { NextFunction, Request, Response } from 'express';
-import * as ElevatorService from './elevators.service';
+import express, { NextFunction, Request, Response } from "express";
+
+import * as ElevatorService from "./elevators.service";
 
 export const elevatorRouter = express.Router();
 
-elevatorRouter.get('/', (_req: Request, res: Response, next: NextFunction) => {
+elevatorRouter.get("/", (_req: Request, res: Response, next: NextFunction) => {
   try {
     const elevators = ElevatorService.getAllElevators();
     res.status(200).json(elevators);
@@ -13,7 +14,7 @@ elevatorRouter.get('/', (_req: Request, res: Response, next: NextFunction) => {
 });
 
 elevatorRouter.put(
-  '/:floor',
+  "/:floor",
   ({ params: { floor } }, res: Response, next: NextFunction) => {
     const floorNumber: number = parseInt(floor, 10);
 
