@@ -1,0 +1,40 @@
+.header {
+  padding: 0 1em;
+  
+  nav {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    li,
+    img {
+      float: left;
+    }
+
+    li a {
+      color: #333;
+      display: block;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+      background-color: #d0ddaa;
+    }
+
+    .active {
+      background-color: #4eb1ba;
+    }
+
+    img {
+      width: 5%;
+      height: 5%;
+      padding-right: 14px;
+      padding-top: 5px;
+    }
+  }
+}
